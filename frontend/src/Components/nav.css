@@ -1,0 +1,21 @@
+.nav{
+    background-color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: -20px;
+    margin-right: -15px;
+}
+.trans{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.dropDown{
+    margin-right: 60px !important;
+}
+
+.main-nav-container{
+    /* background-color: red !important; */
+    display: flex !important;
+    justify-content: space-between !important;
+}

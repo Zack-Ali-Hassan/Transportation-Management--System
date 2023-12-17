@@ -1,0 +1,20 @@
+
+.list-group a {
+    width: 200px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: black;
+}
+.list-group a:hover {
+    background-color: #04b4a2;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.Information {
+    color: black;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}

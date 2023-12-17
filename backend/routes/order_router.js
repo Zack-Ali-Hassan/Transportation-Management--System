@@ -1,0 +1,10 @@
+import express from 'express';
+import { deleted_order, read_all_order, read_single_order, register_order, updated_order } from '../controllers/order_controllers.js';
+import { order_register_validation, order_update_validation } from '../validation/order_validation.js';
+const orderRouter = express.Router();
+orderRouter.route("/").get(read_all_order);
+orderRouter.route("/:id").get(read_single_order);
+orderRouter.route("/register-order").post(order_register_validation, register_order);
+orderRouter.route("/update-order/:id").put(order_update_validation,updated_order);
+orderRouter.route("/delete-order/:id").delete(deleted_order);
+export default orderRouter;
