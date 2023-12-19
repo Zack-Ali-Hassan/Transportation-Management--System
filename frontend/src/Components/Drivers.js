@@ -75,7 +75,7 @@ function AppDrivers() {
       toast.error(error.response.data);
     }
   }
-  const HandleRegister = async () => {
+  const HandleRegister = async (event) => {
     try {
       event.preventDefault();
       let { data } = await axios.post(

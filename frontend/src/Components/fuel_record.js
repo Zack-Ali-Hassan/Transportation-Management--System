@@ -77,7 +77,7 @@ function AppFuel() {
       toast.error(error.response.data);
     }
   };
-  const HandleRegister = async () => {
+  const HandleRegister = async (event) => {
     try {
       event.preventDefault();
       let { data } = await axios.post(
@@ -269,6 +269,7 @@ function AppFuel() {
                   </Button>
                 </Modal.Footer>
               </Modal>
+              {/* update model */}
               <Modal show={showModalUpdate} onHide={HandleCloseModalUpdate}>
                 <Modal.Header closeButton>
                   <Modal.Title>Edit Fuel record Info</Modal.Title>
