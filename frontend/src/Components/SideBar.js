@@ -2,8 +2,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { UserAuth } from "../Context";
+import ProtectPage from "../utills/ProtectPage";
 function AppSideBar() {
+  const { clearCurrentUser } = UserAuth();
+  const HandleLogout =()=>{
+    clearCurrentUser();
+  }
   return (
+    <ProtectPage>
     <div className=" sidebar p-2">
       {/* <div className="m-2 ">
         <span className="brand-name fs-4">Zack</span>
@@ -94,7 +101,7 @@ function AppSideBar() {
         </a>
         <a className="list-group-item py-2">
           <span>
-            <a href="/" className="link">
+            <a href="/" className="link" onClick={HandleLogout}>
               <i className="fa-solid fa-arrow-right-from-bracket fs-5 me-3"></i>
               Logout
             </a>
@@ -102,6 +109,7 @@ function AppSideBar() {
         </a>
       </div>
     </div>
+    </ProtectPage>
   );
 }
 

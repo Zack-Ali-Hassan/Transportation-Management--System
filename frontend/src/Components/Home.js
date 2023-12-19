@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import video1 from "../Images/video1.mp4";
 import "./style.css";
 import axios from "axios";
+import ProtectPage from "../utills/ProtectPage";
 function AppHome() {
 
   const [userCount, setUserCount] = useState("");
@@ -47,6 +48,7 @@ function AppHome() {
     getUserCount();
   },[])
   return (
+    <ProtectPage>
     <section id="home" className="home">
       <Container fluid>
         <Row className="ms-5 mt-5">
@@ -157,6 +159,7 @@ function AppHome() {
         </Row>
       </Container>
     </section>
+    </ProtectPage>
   );
 }
 

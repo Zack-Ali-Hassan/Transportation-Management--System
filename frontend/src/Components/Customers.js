@@ -8,6 +8,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import toast from "react-hot-toast";
+import ProtectPage from "../utills/ProtectPage";
 function AppCustomers() {
   const [showModal, setshowModal] = useState(false);
   const [currentCustomer, setCurrentCustomer] = useState([]);
@@ -100,6 +101,7 @@ function AppCustomers() {
     }
   };
   return (
+    <ProtectPage>
     <section id="customer" className="customer">
       <div className="row">
         <div className="col-xl-12">
@@ -325,6 +327,7 @@ function AppCustomers() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 

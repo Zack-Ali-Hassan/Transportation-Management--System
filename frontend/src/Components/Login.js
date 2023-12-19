@@ -12,8 +12,8 @@ import { UserAuth } from "../Context";
 function AppLogin(props) {
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
-  const {currentUser, setCurrentUser} = UserAuth();
-  // console.log("The currentUser is : " + currentUser);
+  const {setCurrentUser} = UserAuth();
+  // console.log("The currentUser is : " + currentUser?.name);
   const [toggleEye, settoggleEye] = useState(false);
   const [inputToggleEye, setinputToggleEye] = useState("password");
   const navigate = useNavigate();
@@ -23,7 +23,8 @@ function AppLogin(props) {
       let {data} = await axios.post("http://localhost:8000/api/v1/user/user-login", {email,password})
       setCurrentUser(data);
       toast.success("Login successfull ......");
-      window.location = "/home";
+      // navigate("/home");
+      window.location= "/home";
     } catch (error) {
       console.log("Login frontend error : " + error);
       toast.error(error.response.data);

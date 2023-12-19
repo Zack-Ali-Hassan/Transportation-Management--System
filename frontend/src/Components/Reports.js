@@ -3,6 +3,7 @@ import ReactToPrint from "react-to-print";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import ProtectPage from "../utills/ProtectPage";
 function AppReports() {
   const [showTableOrder, setTableOrder] = useState(false);
   const [showTableVehicle, setTableVehicle] = useState(false);
@@ -19,6 +20,7 @@ function AppReports() {
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   return (
+    <ProtectPage>
     <section id="report" className="report">
       <div className="row ">
         <div className="col-xl-12">
@@ -210,6 +212,7 @@ function AppReports() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 export default AppReports;

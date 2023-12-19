@@ -11,8 +11,9 @@ import "./nav.css";
 import { TypeAnimation } from "react-type-animation";
 import AppProfile from "./profile";
 import { UserAuth } from "../Context";
+import ProtectPage from "../utills/ProtectPage";
 function AppNav({ HandleToggle }) {
-  const { currentUser, setCurrentUser } = UserAuth();
+  const { currentUser} = UserAuth();
   console.log("The nav current user : " + currentUser);
   const [showModal, setshowModal] = useState(false);
   const HandleShowModal = () => {
@@ -35,6 +36,7 @@ function AppNav({ HandleToggle }) {
   };
   return (
     <AppLayout>
+      <ProtectPage>
       <section id="dashboard" className="nav">
         <Container fluid>
           <Navbar className="main-nav-container" expand="lg">
@@ -117,6 +119,7 @@ function AppNav({ HandleToggle }) {
           HandleDelete={HandleDelete}
         />
       </section>
+      </ProtectPage>
     </AppLayout>
   );
 }

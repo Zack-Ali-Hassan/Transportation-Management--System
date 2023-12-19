@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import toast from "react-hot-toast";
 import axios from "axios";
+import ProtectPage from "../utills/ProtectPage";
 function AppUsers() {
   const [showModal, setshowModal] = useState(false);
   const [showModalUpdate, setshowModalUpdate] = useState(false);
@@ -100,6 +101,7 @@ function AppUsers() {
     setCurrentUserUpdate(info);
   };
   return (
+    <ProtectPage>
     <section id="user" className="user">
       <div className="row">
         <div className="col-xl-12 ">
@@ -333,6 +335,7 @@ function AppUsers() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 

@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import axios from "axios";
 import toast from "react-hot-toast";
+import ProtectPage from "../utills/ProtectPage";
 function AppVehicles() {
   const [showModal, setshowModal] = useState(false);
   const [showModalUpdate, setShowModalUpdate] = useState(false);
@@ -105,6 +106,7 @@ function AppVehicles() {
   };
 
   return (
+    <ProtectPage>
     <section id="vehicle" className="vehicle">
       <div className="row">
         <div className="col-xl-12">
@@ -365,6 +367,7 @@ function AppVehicles() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 

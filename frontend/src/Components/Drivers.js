@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import axios from "axios";
 import toast from "react-hot-toast";
+import ProtectPage from "../utills/ProtectPage";
 function AppDrivers() {
   const [showModal, setshowModal] = useState(false);
   const [name, setName] = useState("");
@@ -116,6 +117,7 @@ function AppDrivers() {
     }
   }
   return (
+    <ProtectPage>
     <section id="driver" className="driver">
       <div className="row">
         <div className="col-xl-12">
@@ -335,6 +337,7 @@ function AppDrivers() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 

@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import toast from "react-hot-toast";
 import axios from "axios";
+import ProtectPage from "../utills/ProtectPage";
 
 function AppRoutes() {
   const [showModal, setshowModal] = useState(false);
@@ -96,6 +97,7 @@ function AppRoutes() {
     }
   }
   return (
+    <ProtectPage>
     <section id="service" className="service">
       <div className="row">
         <div className="col-xl-12">
@@ -323,6 +325,7 @@ function AppRoutes() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 

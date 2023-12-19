@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import axios from "axios";
 import toast from "react-hot-toast";
+import ProtectPage from "../utills/ProtectPage";
 function AppOrder() {
   const [showModal, setshowModal] = useState(false);
   const [pickup_location, setPickup_location] = useState("");
@@ -134,6 +135,7 @@ function AppOrder() {
     }
   };
   return (
+    <ProtectPage>
     <section id="driver" className="driver">
       <div className="row">
         <div className="col-xl-12">
@@ -438,6 +440,7 @@ function AppOrder() {
         </div>
       </div>
     </section>
+    </ProtectPage>
   );
 }
 
