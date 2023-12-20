@@ -12,3 +12,4 @@ customerRouter.route("/update-customer/:id").put(customer_edit_validation, updat
 customerRouter.route("/delete-customer/:id").delete(deleted_customer);
 
 export default customerRouter;
+

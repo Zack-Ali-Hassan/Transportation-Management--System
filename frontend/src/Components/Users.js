@@ -58,7 +58,11 @@ function AppUsers() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
-      // Swal.fire("Good job", "You have Registered successfully", "success");
+      setName("")
+      setType("")
+      setMobile("")
+      setEmail("")
+      setPassword("")
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register user : " + error);
@@ -80,6 +84,11 @@ function AppUsers() {
       console.log(data);
       toast.success(data);
       setshowModalUpdate(false);
+      setName("")
+      setType("")
+      setMobile("")
+      setEmail("")
+      setPassword("")
     } catch (error) {
       toast.error(error.response.data);
     }

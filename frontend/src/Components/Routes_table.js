@@ -64,14 +64,17 @@ function AppRoutes() {
         "http://localhost:8000/api/v1/routes/register-route",
         {
           source_location,
-          distination_location,
+          destination_location,
           distance,
           estimated_time,
         }
       );
-      console.log(data);
       setshowModal(false);
       toast.success(data);
+      setSourceLocation("")
+      setDistinationLocation("")
+      setDistance("")
+      setEstimated_time("")
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register routes : " + error);
@@ -92,6 +95,10 @@ function AppRoutes() {
       console.log(data);
       toast.success(data);
       setShowModalUpdate(false);
+      setSourceLocation("")
+      setDistinationLocation("")
+      setDistance("")
+      setEstimated_time("")
     } catch (error) {
       toast.error(error.response.data);
     }

@@ -33,28 +33,7 @@ function AppVehicles() {
   const HandleCloseModalUpdate = () => {
     setShowModalUpdate(false);
   };
-  const HandleUpdated = async ()=>{
-    try {
-      let { data } = await axios.put(
-        `http://localhost:8000/api/v1/vehicle/update-vehicle/${currentVehicleUpdate._id}`,
-        {
-          
-          vehicle_number : currentVehicleUpdate.vehicle_number,
-          type : currentVehicleUpdate.type,
-          fual_type : currentVehicleUpdate.fual_type,
-          capacity : currentVehicleUpdate.capacity,
-          location : currentVehicleUpdate.location,
-          status : currentVehicleUpdate.status,
-        }
-      );
-      // setUpdateCustomerData(data);
-      console.log(data);
-      toast.success(data);
-      setShowModalUpdate(false);
-    } catch (error) {
-      toast.error(error.response.data);
-    }
-  }
+  
   useEffect(() => {
     try {
       const getVehicleData = async () => {
@@ -98,13 +77,46 @@ function AppVehicles() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
+      setVehicle_number("")
+      setType("")
+      setFual_type("")
+      setCapacity("")
+      setLocation("")
+      setStatus("")
       // Swal.fire("Good job", "You have Registered successfully", "success");
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register vehicle : " + error);
     }
   };
-
+  const HandleUpdated = async ()=>{
+    try {
+      let { data } = await axios.put(
+        `http://localhost:8000/api/v1/vehicle/update-vehicle/${currentVehicleUpdate._id}`,
+        {
+          
+          vehicle_number : currentVehicleUpdate.vehicle_number,
+          type : currentVehicleUpdate.type,
+          fual_type : currentVehicleUpdate.fual_type,
+          capacity : currentVehicleUpdate.capacity,
+          location : currentVehicleUpdate.location,
+          status : currentVehicleUpdate.status,
+        }
+      );
+      // setUpdateCustomerData(data);
+      console.log(data);
+      toast.success(data);
+      setShowModalUpdate(false);
+      setVehicle_number("")
+      setType("")
+      setFual_type("")
+      setCapacity("")
+      setLocation("")
+      setStatus("")
+    } catch (error) {
+      toast.error(error.response.data);
+    }
+  }
   return (
     <ProtectPage>
     <section id="vehicle" className="vehicle">

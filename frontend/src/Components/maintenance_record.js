@@ -91,11 +91,15 @@ function AppMaintenance() {
       console.log(data);
       toast.success(data);
       setShowModalUpdate(false);
+      setType("")
+      setDescription("")
+      setCost("")
+      setVehicle("")
     } catch (error) {
       toast.error(error.response.data);
     }
   };
-  const HandleRegister = async () => {
+  const HandleRegister = async (event) => {
     try {
       event.preventDefault();
       let { data } = await axios.post(
@@ -110,7 +114,10 @@ function AppMaintenance() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
-      // Swal.fire("Good job", "You have Registered successfully", "success");
+      setType("")
+      setDescription("")
+      setCost("")
+      setVehicle("")
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register maintenance : " + error);

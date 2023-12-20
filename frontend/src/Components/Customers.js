@@ -22,7 +22,6 @@ function AppCustomers() {
   const HandleCloseModalUpdate = () => {
     setShowModalUpdate(false);
   };
-  console.log("CuurentCustomer:------", currentCustomer)
 
 
   useEffect(() => {
@@ -52,6 +51,10 @@ function AppCustomers() {
       console.log(data);
       toast.success(data);
       setShowModalUpdate(false);
+      setName("")
+      setGender("")
+      setAddress("");
+      setMobile("")
     } catch (error) {
       toast.error(error.response.data);
     }
@@ -94,6 +97,10 @@ function AppCustomers() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
+      setName("")
+      setGender("")
+      setAddress("");
+      setMobile("")
       // Swal.fire("Good job", "You have Registered successfully", "success");
     } catch (error) {
       toast.error(error.response.data);

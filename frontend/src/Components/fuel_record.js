@@ -92,7 +92,10 @@ function AppFuel() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
-      // Swal.fire("Good job", "You have Registered successfully", "success");
+      setType("")
+      setQuantity("")
+      setCost("")
+      setVehicle("")
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register fuel record : " + error);
@@ -113,6 +116,10 @@ function AppFuel() {
       console.log(data);
       toast.success(data);
       setShowModalUpdate(false);
+      setType("")
+      setQuantity("")
+      setCost("")
+      setVehicle("")
     } catch (error) {
       toast.error(error.response.data);
     }

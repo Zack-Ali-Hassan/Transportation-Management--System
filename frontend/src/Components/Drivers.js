@@ -90,7 +90,10 @@ function AppDrivers() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
-      // Swal.fire("Good job", "You have Registered successfully", "success");
+      setName("")
+      setMobile("")
+      setEmail("")
+      setVehicle("")
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register driver : " + error);
@@ -108,10 +111,13 @@ function AppDrivers() {
           vehicle : currentDriverUpdate.vehicle,
         }
       );
-      // setUpdateCustomerData(data);
       console.log(data);
       toast.success(data);
       setShowModalUpdate(false);
+      setName("")
+      setMobile("")
+      setEmail("")
+      setVehicle("")
     } catch (error) {
       toast.error(error.response.data);
     }

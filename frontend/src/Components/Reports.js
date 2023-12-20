@@ -42,7 +42,6 @@ function AppReports() {
       console.log("The reading all report : " + error);
     }
   }, []);
-
   const HandleOrderTable = () => {
     setTableMaintenance(true);
     setTableFuel(false);
@@ -51,6 +50,7 @@ function AppReports() {
     setTableFuel(true);
     setTableMaintenance(false);
   };
+  let fuelDate = new Date();
   let today = new Date();
   let date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
@@ -118,15 +118,30 @@ function AppReports() {
                           </tr>
                         </thead>
                         <tbody>
-                        {getAllMaintenanceReport.map((data) => (
-                            <tr key={data._id}>
-                              <td>{data.type}</td>
-                              <td>{data.description}</td>
-                              <td>{data.cost}</td>
-                              <td>{data.vehicle.type}</td>
-                              <td>{data.createdAt}</td>
-                            </tr>
-                          ))}
+                          {getAllMaintenanceReport.map((data) => {
+                            var date = new Date(data.createdAt);
+                            var year = date.getFullYear();
+                            var month = String(date.getMonth() + 1).padStart(
+                              2,
+                              "0"
+                            );
+                            var day = String(date.getDay() + 1).padStart(
+                              2,
+                              "0"
+                            );
+                            var fDate = `${year} - ${month} - ${day}`;
+
+                            return (
+                              <tr key={data._id}>
+                                <td>{data.type}</td>
+                                <td>{data.description}</td>
+                                <td>{data.cost}</td>
+                                <td>{data.vehicle.type}</td>
+                                {}
+                                <td>{fDate}</td>
+                              </tr>
+                            );
+                          })}
                         </tbody>
                       </table>
                     </>
@@ -157,15 +172,22 @@ function AppReports() {
                           </tr>
                         </thead>
                         <tbody>
-                          {getAllFuelReport.map((data) => (
-                            <tr key={data._id}>
-                              <td>{data.type}</td>
-                              <td>{data.quantity}</td>
-                              <td>{data.cost}</td>
-                              <td>{data.vehicle.type}</td>
-                              <td>{data.createdAt}</td>
-                            </tr>
-                          ))}
+                          {getAllFuelReport.map((data) => {
+                            var date = new Date(data.createdAt)
+                            var year = date.getFullYear()
+                            var month = String(date.getMonth()+1).padStart(2,"0");
+                            var day = String(date.getDay()+1).padStart(2,"0");
+                            var fDate = `${year} - ${month} - ${day}`
+                            return (
+                              <tr key={data._id}>
+                                <td>{data.type}</td>
+                                <td>{data.quantity}</td>
+                                <td>{data.cost}</td>
+                                <td>{data.vehicle.type}</td>
+                                <td>{fDate}</td>
+                              </tr>
+                            );
+                          })}
                         </tbody>
                       </table>
                     </>

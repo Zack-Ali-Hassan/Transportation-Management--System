@@ -1,4 +1,4 @@
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -17,7 +17,9 @@ function AppLogin(props) {
   const [toggleEye, settoggleEye] = useState(false);
   const [inputToggleEye, setinputToggleEye] = useState("password");
   const navigate = useNavigate();
-
+  useEffect(()=>{
+    localStorage.clear();
+  },[])
   const HandleClick = async () => {
     try {
       let {data} = await axios.post("http://localhost:8000/api/v1/user/user-login", {email,password})

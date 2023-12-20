@@ -90,7 +90,7 @@ function AppOrder() {
       toast.error(error.response.data);
     }
   };
-  const HandleRegister = async () => {
+  const HandleRegister = async (event) => {
     try {
       event.preventDefault();
       let { data } = await axios.post(
@@ -107,7 +107,12 @@ function AppOrder() {
       console.log(data);
       HandleCloseModal();
       toast.success(data);
-      // Swal.fire("Good job", "You have Registered successfully", "success");
+      setPickup_location("");
+      setDelivery_location("");
+      setWeight("");
+      setStatus("");
+      setVehicle("");
+      setCustomer("");
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register order : " + error);
@@ -126,10 +131,15 @@ function AppOrder() {
           customer: currentOrderUpdate.customer,
         }
       );
-      // setUpdateCustomerData(data);
       console.log(data);
       toast.success(data);
       setShowModalUpdate(false);
+      setPickup_location("");
+      setDelivery_location("");
+      setWeight("");
+      setStatus("");
+      setVehicle("");
+      setCustomer("");
     } catch (error) {
       toast.error(error.response.data);
     }
