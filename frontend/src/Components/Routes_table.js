@@ -159,40 +159,49 @@ function AppRoutes() {
                     </tr>
                   </thead>
                  <tbody>
-                 {routesData.map((data) => (
-                    
+                 {routesData.map((data) =>{
+                   var date = new Date(data.createdAt)
+                   var year = date.getFullYear()
+                   var month = String(date.getMonth()+1).padStart(2,"0");
+                   var day = String(date.getDay()+1).padStart(2,"0");
+                   var fDate = `${year} - ${month} - ${day}`
+                  return (
                     <tr key={data._id}>
-                      {/* <td>{data._id}</td> */}
-                      <td>{data.source_location}</td>
-                      <td>{data.destination_location}</td>
-                      <td>{data.distance}</td>
-                      <td>{data.estimated_time}</td>
-                      <td>{data.createdAt}</td>
-                      <td>
-                        <a
-                          className="btn btn-info"
-                          type="submit"
-                          onClick={()=> HandleSHowUpdate(data)}
-                        >
-                          <i
-                            className="fas fa-edit"
-                            style={{ color: "#fff" }}
-                          ></i>
-                        </a>
-                        <a
-                          className="btn btn-danger ms-3"
-                          type="submit"
-                          onClick={()=> HandleDelete(data._id)}
-                        >
-                          <i
-                            className="fas fa-trash"
-                            style={{ color: "#fff" }}
-                          ></i>
-                        </a>
-                      </td>
-                    </tr>
+                    {/* <td>{data._id}</td> */}
+                    <td>{data.source_location}</td>
+                    <td>{data.destination_location}</td>
+                    <td>{data.distance}</td>
+                    <td>{data.estimated_time}</td>
+                    <td>{fDate}</td>
+                    <td>
+                      <a
+                        className="btn btn-info"
+                        type="submit"
+                        onClick={()=> HandleSHowUpdate(data)}
+                      >
+                        <i
+                          className="fas fa-edit"
+                          style={{ color: "#fff" }}
+                        ></i>
+                      </a>
+                      <a
+                        className="btn btn-danger ms-3"
+                        type="submit"
+                        onClick={()=> HandleDelete(data._id)}
+                      >
+                        <i
+                          className="fas fa-trash"
+                          style={{ color: "#fff" }}
+                        ></i>
+                      </a>
+                    </td>
+                  </tr>
+                  )
+                 } 
                     
-                  ))}
+                   
+                    
+                  )}
                  </tbody>
                 
                 </table>
