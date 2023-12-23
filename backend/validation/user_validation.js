@@ -7,7 +7,7 @@ export const register_user_validation = (req, res, next) => {
       name: joi.string().min(3).max(50).required().trim(),
       type: joi.string().min(3).max(6).required().trim(),
       mobile: joi.string().min(9).max(9).required().trim(),
-      email: joi.string().min(9).email().required().trim(),
+      email: joi.string().email().required().trim(),
       password: joi.string().min(5).required().trim(),
     });
     const { error } = register_user_schema.validate(req.body);
@@ -29,7 +29,7 @@ export const update_user_validation = (req, res, next) => {
       name: joi.string().min(3).max(50).required().trim(),
       type: joi.string().min(3).max(6).required().trim(),
       mobile: joi.string().min(9).max(9).required().trim(),
-      email: joi.string().min(9).email().required().trim(),
+      email: joi.string().email().required().trim(),
       password: joi.string().min(5).required().trim(),
     });
     const { error } = register_user_schema.validate(req.body);
@@ -48,7 +48,7 @@ export const update_user_validation = (req, res, next) => {
 export const login_user_validation = (req, res, next) => {
   try {
     const register_user_schema = joi.object({
-      email: joi.string().min(9).email().required().trim(),
+      email: joi.string().email().required().trim(),
       password: joi.string().min(5).required().trim(),
     });
     const { error } = register_user_schema.validate(req.body);

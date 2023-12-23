@@ -232,12 +232,12 @@ function AppVehicles() {
                       <Form.Label>Vehicle Type</Form.Label>
                       <Form.Select value={type} onChange={(event)=> setType(event.target.value)}>
                         <option>choose vehicle type</option>
-                        <option value="cars">Cars</option>
-                        <option value="trucks">Trucks</option>
-                        <option value="buses">Buses</option>
-                        <option value="trains">Trains</option>
-                        <option value="airplanes">Airplanes</option>
-                        <option value="cargo_ships">Cargo Ships</option>
+                        <option value="cars">cars</option>
+                        <option value="trucks">trucks</option>
+                        <option value="buses">buses</option>
+                        <option value="trains">trains</option>
+                        <option value="airplanes">airplanes</option>
+                        <option value="cargo_ships">cargo_ships</option>
                       </Form.Select>
                     </Form.Group>
                     <Form.Group className="mb-3">
@@ -245,9 +245,9 @@ function AppVehicles() {
                       <Form.Select   value={fual_type}
                         onChange={(event)=> setFual_type(event.target.value)}>
                         <option>choose fuel type</option>
-                        <option value="petrol">Petrol</option>
-                        <option value="diesel">Diesel</option>
-                        <option value="electricity">Electricity</option>
+                        <option value="petrol">petrol</option>
+                        <option value="diesel">diesel</option>
+                        <option value="electricity">electricity</option>
                       </Form.Select>
                     </Form.Group>
                    
@@ -311,12 +311,12 @@ function AppVehicles() {
                        onChange={(event)=> setCurrentVehicleUpdate({...currentVehicleUpdate, type : event.target.value})} 
                      >
                         <option>choose vehicle type</option>
-                        <option value="cars">Cars</option>
-                        <option value="trucks">Trucks</option>
-                        <option value="buses">Buses</option>
-                        <option value="trains">Trains</option>
-                        <option value="airplanes">Airplanes</option>
-                        <option value="cargo_ships">Cargo Ships</option>
+                        <option value="cars">cars</option>
+                        <option value="trucks">trucks</option>
+                        <option value="buses">buses</option>
+                        <option value="trains">trains</option>
+                        <option value="airplanes">airplanes</option>
+                        <option value="cargo_ships">cargo_ships</option>
                       </Form.Select>
                     </Form.Group>
                     <Form.Group className="mb-3">
@@ -326,9 +326,9 @@ function AppVehicles() {
                        onChange={(event)=> setCurrentVehicleUpdate({...currentVehicleUpdate, fuel_type : event.target.value})}
                      >
                         <option>choose fuel type</option>
-                        <option value="petrol">Petrol</option>
-                        <option value="diesel">Diesel</option>
-                        <option value="electricity">Electricity</option>
+                        <option value="petrol">petrol</option>
+                        <option value="diesel">diesel</option>
+                        <option value="electricity">electricity</option>
                       </Form.Select>
                     </Form.Group>
                    
