@@ -4,7 +4,7 @@ import joi from "joi";
 export const register_user_validation = (req, res, next) => {
   try {
     const register_user_schema = joi.object({
-      name: joi.string().min(3).max(20).required().trim(),
+      name: joi.string().min(3).max(50).required().trim(),
       type: joi.string().min(3).max(6).required().trim(),
       mobile: joi.string().min(9).max(9).required().trim(),
       email: joi.string().min(9).email().required().trim(),
@@ -26,7 +26,7 @@ export const register_user_validation = (req, res, next) => {
 export const update_user_validation = (req, res, next) => {
   try {
     const register_user_schema = joi.object({
-      name: joi.string().min(3).max(20).required().trim(),
+      name: joi.string().min(3).max(50).required().trim(),
       type: joi.string().min(3).max(6).required().trim(),
       mobile: joi.string().min(9).max(9).required().trim(),
       email: joi.string().min(9).email().required().trim(),

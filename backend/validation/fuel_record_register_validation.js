@@ -2,7 +2,7 @@ import chalk from "chalk";
 import Joi from "joi";
 export const fuel_record_register_validation = (req, res, next) => {
     const schema = Joi.object({
-      type: Joi.string().min(3).max(30).required().trim(),
+      type: Joi.string().min(3).max(60).required().trim(),
       quantity: Joi.string().min(1).max(9).required().trim(),
       cost: Joi.string().min(1).max(30).required().trim(),
       vehicle: Joi.string().required().trim(),
@@ -18,7 +18,7 @@ export const fuel_record_register_validation = (req, res, next) => {
 };
 export const fuel_record_update_validation = (req, res, next) => {
     const schema = Joi.object({
-      type: Joi.string().min(3).max(30).required().trim(),
+      type: Joi.string().min(3).max(60).required().trim(),
       quantity: Joi.string().min(1).max(9).required().trim(),
       cost: Joi.string().min(1).max(30).required().trim(),
       vehicle: Joi.string().required().trim(),

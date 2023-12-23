@@ -2,8 +2,8 @@ import chalk from "chalk";
 import Joi from "joi";
 export const order_register_validation = (req, res, next) => {
   const schema = Joi.object({
-    pickup_location: Joi.string().min(1).max(9).required().trim(),
-    delivery_location: Joi.string().min(1).max(30).required().trim(),
+    pickup_location: Joi.string().min(1).max(120).required().trim(),
+    delivery_location: Joi.string().min(1).max(120).required().trim(),
     weight: Joi.string().min(1).max(20).required().trim(),
     status: Joi.string().min(1).max(20).required().trim(),
     customer: Joi.string().min(3).max(30).required().trim(),
@@ -18,8 +18,8 @@ export const order_register_validation = (req, res, next) => {
 };
 export const order_update_validation = (req, res, next) => {
   const schema = Joi.object({
-    pickup_location: Joi.string().min(1).max(9).required().trim(),
-    delivery_location: Joi.string().min(1).max(30).required().trim(),
+    pickup_location: Joi.string().min(1).max(120).required().trim(),
+    delivery_location: Joi.string().min(1).max(120).required().trim(),
     weight: Joi.string().min(1).max(20).required().trim(),
     status: Joi.string().min(1).max(20).required().trim(),
     customer: Joi.string().min(3).max(30).required().trim(),

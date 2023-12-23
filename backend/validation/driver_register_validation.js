@@ -3,7 +3,7 @@ import Joi from "joi";
 export const driver_register_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-      name: Joi.string().min(4).max(30).required().trim(),
+      name: Joi.string().min(4).max(60).required().trim(),
       
       mobile: Joi.string().min(9).max(9).required().trim(),
 
@@ -23,7 +23,7 @@ export const driver_register_validation = (req, res, next) => {
 export const driver_update_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-      name: Joi.string().min(4).max(30).required().trim(),
+      name: Joi.string().min(4).max(60).required().trim(),
       
       mobile: Joi.string().min(9).max(9).required().trim(),
 

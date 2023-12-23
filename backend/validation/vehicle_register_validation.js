@@ -3,13 +3,13 @@ import Joi from "joi";
 export const vehicle_register_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-      vehicle_number: Joi.string().min(5).max(30).required().trim(),
+      vehicle_number: Joi.string().min(5).max(50).required().trim(),
 
-      type: Joi.string().min(2).max(30).required().trim(),
+      type: Joi.string().min(2).max(50).required().trim(),
 
       fual_type: Joi.string().min(3).max(30).required().trim(),
 
-      capacity: Joi.string().min(2).max(9).required().trim(),
+      capacity: Joi.string().min(2).max(20).required().trim(),
       location: Joi.string().trim(),
       status: Joi.string().required().trim(),
     });
@@ -26,13 +26,13 @@ export const vehicle_register_validation = (req, res, next) => {
 export const vehicle_update_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-      vehicle_number: Joi.string().min(5).max(30).required().trim(),
+      vehicle_number: Joi.string().min(5).max(50).required().trim(),
 
-      type: Joi.string().min(2).max(30).required().trim(),
+      type: Joi.string().min(2).max(50).required().trim(),
 
       fual_type: Joi.string().min(3).max(30).required().trim(),
 
-      capacity: Joi.string().min(2).max(9).required().trim(),
+      capacity: Joi.string().min(1).max(30).required().trim(),
       location: Joi.string().trim(),
       status: Joi.string().required().trim(),
     });

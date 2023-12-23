@@ -3,8 +3,8 @@ import Joi from "joi";
 export const routes_register_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-        source_location: Joi.string().min(3).max(30).required().trim(),
-        destination_location: Joi.string().min(3).max(30).required().trim(),
+        source_location: Joi.string().min(3).max(100).required().trim(),
+        destination_location: Joi.string().min(3).max(100).required().trim(),
         distance: Joi.string().min(3).max(30).required().trim(),
         estimated_time: Joi.string().min(2).max(30).required().trim(),
     });
@@ -21,8 +21,8 @@ export const routes_register_validation = (req, res, next) => {
 export const routes_update_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-        source_location: Joi.string().min(3).max(30).required().trim(),
-        destination_location: Joi.string().min(3).max(30).required().trim(),
+        source_location: Joi.string().min(3).max(100).required().trim(),
+        destination_location: Joi.string().min(3).max(100).required().trim(),
         distance: Joi.string().min(3).max(30).required().trim(),
         estimated_time: Joi.string().min(2).max(30).required().trim(),
     });

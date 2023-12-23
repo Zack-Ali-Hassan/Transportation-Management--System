@@ -3,7 +3,7 @@ import Joi from "joi";
 export const customer_register_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-      name: Joi.string().min(4).max(30).required().trim(),
+      name: Joi.string().min(4).max(60).required().trim(),
 
       gender: Joi.string().min(4).max(7).required().trim(),
 
@@ -24,7 +24,7 @@ export const customer_register_validation = (req, res, next) => {
 export const customer_edit_validation = (req, res, next) => {
   try {
     const schema = Joi.object({
-      name: Joi.string().min(4).max(30).required().trim(),
+      name: Joi.string().min(4).max(60).required().trim(),
 
       gender: Joi.string().min(4).max(7).required().trim(),
 

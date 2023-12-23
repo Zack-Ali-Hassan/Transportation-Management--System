@@ -2,8 +2,8 @@ import chalk from "chalk";
 import Joi from "joi";
 export const maintenance_record_register_validation = (req, res, next) => {
     const schema = Joi.object({
-      type: Joi.string().min(3).max(30).required().trim(),
-      description: Joi.string().min(1).max(100).trim(),
+      type: Joi.string().min(3).max(80).required().trim(),
+      description: Joi.string().min(1).max(150).trim(),
       cost: Joi.string().min(1).max(30).required().trim(),
       vehicle: Joi.string().required().trim(),
     });
@@ -18,8 +18,8 @@ export const maintenance_record_register_validation = (req, res, next) => {
 };
 export const maintenance_record_update_validation = (req, res, next) => {
     const schema = Joi.object({
-      type: Joi.string().min(3).max(30).required().trim(),
-      description: Joi.string().min(1).max(100).trim(),
+      type: Joi.string().min(3).max(80).required().trim(),
+      description: Joi.string().min(1).max(150).trim(),
       cost: Joi.string().min(1).max(30).required().trim(),
       vehicle: Joi.string().required().trim(),
     });

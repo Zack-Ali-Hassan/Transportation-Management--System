@@ -4,6 +4,7 @@ import Order from "../model/orders_model.js";
 import Routes from "../model/routes_model.js";
 import Vehicle from "../model/vehicles_model.js";
 import User from "../model/user_model.js";
+import chalk from "chalk";
 export const get_count_customer = async (req, res)=>{
     try {
         const getCustomersCount = await Customer.find({}).count();

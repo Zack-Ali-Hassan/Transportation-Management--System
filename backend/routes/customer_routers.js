@@ -13,3 +13,4 @@ customerRouter.route("/delete-customer/:id").delete(deleted_customer);
 
 export default customerRouter;
 
+
