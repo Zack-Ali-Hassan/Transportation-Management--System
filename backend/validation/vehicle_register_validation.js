@@ -5,7 +5,7 @@ export const vehicle_register_validation = (req, res, next) => {
     const schema = Joi.object({
       vehicle_number: Joi.string().min(5).max(50).required().trim(),
 
-      type: Joi.string().min(2).max(50).required().trim(),
+      type: Joi.string().min(1).max(50).required().trim(),
 
       fual_type: Joi.string().min(3).max(30).required().trim(),
 
@@ -28,7 +28,7 @@ export const vehicle_update_validation = (req, res, next) => {
     const schema = Joi.object({
       vehicle_number: Joi.string().min(5).max(50).required().trim(),
 
-      type: Joi.string().min(2).max(50).required().trim(),
+      type: Joi.string().min(1).max(50).required().trim(),
 
       fual_type: Joi.string().min(3).max(30).required().trim(),
 
