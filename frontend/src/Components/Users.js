@@ -45,6 +45,16 @@ function AppUsers() {
   const HandleRegister = async (event) => {
     try {
       event.preventDefault();
+       //checking mobile
+      const isValidMobile = /^61\d{7}$/.test(mobile);
+      console.log(isValidMobile);
+      if(mobile == ''){
+        toast.error("please, Enter mobile");
+      }
+      else if (!isValidMobile) {
+        toast.error("please, enter valid mobile");
+      }
+      else{ 
       let { data } = await axios.post(
         "http://localhost:8000/api/v1/user/register-user",
         {
@@ -63,6 +73,7 @@ function AppUsers() {
       setMobile("")
       setEmail("")
       setPassword("")
+    }
     } catch (error) {
       toast.error(error.response.data);
       console.log("Error in register user : " + error);
@@ -70,6 +81,7 @@ function AppUsers() {
   };
   const HandleUpdated = async ()=>{
     try {
+      
       let { data } = await axios.put(
         `http://localhost:8000/api/v1/user/update-user/${currentUserUpdate._id}`,
         {
